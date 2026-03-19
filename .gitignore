@@ -1,7 +1,2 @@
 node_modules
-
-# Playwright
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
-/src/reports
+src/reports

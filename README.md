@@ -16,6 +16,7 @@ git checkout <branch name>
 ```
 
 * The following branches are available:
+    - WDIO module: wdio-practice-task
     - Playwright module: playwright-practice-task
     - Cypress module: cypress-practice-task
 
