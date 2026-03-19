@@ -17,6 +17,9 @@ git checkout <branch name>
 
 * The following branches are available:
     - Playwright module: playwright-practice-task
+    - Cypress module: cypress-practice-task
+
+* You may follow the next instructions once you have successfully switched branches.
 
 ### Dependencies
 
