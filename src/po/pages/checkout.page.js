@@ -1,16 +1,16 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page";
 
-class checkoutPage extends basePage {
+export class CheckoutPage extends BasePage {
 
-    constructor(page) {
-        super(page, "/checkout");
+    constructor() {
+        super("/checkout");
     }
 
-    selectors = {
-        "proccedWithPaymentBtn" : "button[data-test='proceed-1']",
-        "signInForm" : "#signin-tab"
+    get proccedWithPaymentBtn () { return $("[data-test='proceed-1']") }
+    get signInForm () { return $("#signin-tab") }
+
+    async paymentNextStep() {
+        this.proccedWithPaymentBtn.click();
     }
 
 }
-
-export { checkoutPage };

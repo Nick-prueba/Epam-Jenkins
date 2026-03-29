@@ -1,20 +1,25 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page";
+import { headerComponent } from "./components/header.component";
 
-class productPage extends basePage {
+export class ProductPage extends BasePage {
 
-    constructor(page) {
-        super(page);
+    constructor() {
+        super("/product");
+        this.headerComponent = new headerComponent;
     }
 
-    selectors = {
-        "addToCartBtn" : "#btn-add-to-cart",
-        "linkToCart" : "a[data-test='nav-cart']"
-    }
+    get addToCartBtn () { return $("#btn-add-to-cart") }
 
     async open(productId) {
-        await this.page.goto(`/product/${productId}`);
+        await browser.url(`/product/${productId}`);
+    }
+
+    async addProductToCart() {
+        await this.addToCartBtn.click();
+    }
+
+    async goToCart() {
+        await this.headerComponent.goToCart();
     }
 
 }
-
-export { productPage };

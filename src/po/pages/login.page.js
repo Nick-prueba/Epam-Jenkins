@@ -1,24 +1,20 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page";
 
-class loginPage extends basePage {
+export class LoginPage extends BasePage {
 
-    constructor(page) {
-        super(page, "/auth/login");
+    constructor() {
+        super("/auth/login");
     }
 
-    selectors = {
-        "emailField" : "#email",
-        "passwordField" : "#password",
-        "submitBtn" : ".btnSubmit",
-        "invalidPassErrorMsg" : ".help-block"
-    }
+    get email () { return $("#email") }
+    get password () { return $("#password") }
+    get submitBtn () { return $(".btnSubmit") }
+    get loginErrorMsg () { return $(".help-block") }
 
     async login(username, password) {
-        await this.getSelector("emailField").fill(username);
-        await this.getSelector("passwordField").fill(password);
-        await this.getSelector("submitBtn").click();
+        await this.email.setValue(username);
+        await this.password.setValue(password);
+        await this.submitBtn.click();
     }
 
 }
-
-export { loginPage };

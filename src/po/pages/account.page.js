@@ -1,14 +1,11 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page";
 
-class accountPage extends basePage {
+export class AccountPage extends BasePage {
 
-    constructor(page) {
-        super(page, "/account")
+    constructor() {
+        super("/account")
     }
 
-    selectors = {
-        "pageTitle" : "h1[data-test='page-title']"
-    }
+    get pageTitle () { return $("[data-test='page-title']") }
+
 }
-
-export { accountPage };

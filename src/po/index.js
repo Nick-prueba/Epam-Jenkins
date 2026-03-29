@@ -1,13 +1,11 @@
-import { loginPage } from "./pages/login.page.js";
-import { accountPage } from "./pages/account.page.js";
-import { mainPage } from "./pages/main.page.js";
-import { checkoutPage } from "./pages/checkout.page.js";
-import { productPage } from "./pages/product.page.js";
+import LoginPage from "./pages/login.page.js";
+import AccountPage from "./pages/account.page.js";
+import MainPage from "./pages/main.page.js";
+import CheckoutPage from "./pages/checkout.page.js";
+import ProductPage from "./pages/product.page.js";
 
-export { 
-    loginPage, 
-    accountPage, 
-    mainPage, 
-    checkoutPage, 
-    productPage 
-};
+export const loginPage = new LoginPage;
+export const accountPage = new AccountPage
+export const mainPage = new MainPage
+export const checkoutPage = new CheckoutPage
+export const productPage = new ProductPage
