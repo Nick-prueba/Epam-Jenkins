@@ -1,24 +1,20 @@
 import { basePage } from "./base.page";
 
-class loginPage extends basePage {
+export class loginPage extends basePage {
 
     constructor(page) {
         super(page, "/auth/login");
     }
 
-    selectors = {
-        "emailField" : "#email",
-        "passwordField" : "#password",
-        "submitBtn" : ".btnSubmit",
-        "invalidPassErrorMsg" : ".help-block"
-    }
+    get emailField() { return this.page.locator("#email") }
+    get passwordField() { return this.page.locator("#password") }
+    get submitBtn() { return this.page.locator(".btnSubmit") }
+    get loginErrorMsg() { return this.page.locator(".help-block") }
 
     async login(username, password) {
-        await this.getSelector("emailField").fill(username);
-        await this.getSelector("passwordField").fill(password);
-        await this.getSelector("submitBtn").click();
+        await this.emailField.fill(username);
+        await this.passwordField.fill(password);
+        await this.submitBtn.click();
     }
 
 }
-
-export { loginPage };

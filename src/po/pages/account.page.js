@@ -1,14 +1,10 @@
 import { basePage } from "./base.page";
 
-class accountPage extends basePage {
+export class accountPage extends basePage {
 
     constructor(page) {
         super(page, "/account")
     }
 
-    selectors = {
-        "pageTitle" : "h1[data-test='page-title']"
-    }
+    get myAccountTitle() { return this.page.locator("h1[data-test='page-title']") }
 }
-
-export { accountPage };
