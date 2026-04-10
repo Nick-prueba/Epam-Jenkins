@@ -5,7 +5,7 @@ test.beforeEach( async ({ mainPage }) => {
 });
 
 test.describe("Test checkout functionality", () => {
-    test.only("Login form should appear on checkout when not logged in", async ({ mainPage, productPage, checkoutPage }) => {
+    test("Login form should appear on checkout when not logged in", async ({ mainPage, productPage, checkoutPage }) => {
         await mainPage.goToProduct("CombinationPliers");
         await productPage.addProductToCart();
         await expect(productPage.getPopUpMsg()).toContainText("Product added to shopping cart.");
