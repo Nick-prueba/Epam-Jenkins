@@ -1,6 +1,6 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page.js";
 
-export class mainPage extends basePage {
+export class MainPage extends BasePage {
 
     constructor(page) {
         super(page, "/");
@@ -25,6 +25,10 @@ export class mainPage extends basePage {
         await this.page.mouse.down();
         await this.page.mouse.move(targetX, centerY);
         await this.page.mouse.up();
+    }
+
+    async goToProduct(productName) {
+        await this[`product${productName}`].click();
     }
 
 }

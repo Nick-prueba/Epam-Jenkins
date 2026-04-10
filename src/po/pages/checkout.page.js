@@ -1,6 +1,6 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page.js";
 
-export class checkoutPage extends basePage {
+export class CheckoutPage extends BasePage {
 
     constructor(page) {
         super(page, "/checkout");
@@ -8,5 +8,10 @@ export class checkoutPage extends basePage {
 
     get proccedWithPaymentBtn() { return this.page.locator("button[data-test='proceed-1']") }
     get signInForm() { return this.page.locator("#signin-tab") }
+
+    async paymentNextStep() {
+        this.proccedWithPaymentBtn.click();
+    }
+
 
 }

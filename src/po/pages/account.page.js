@@ -1,6 +1,6 @@
-import { basePage } from "./base.page";
+import { BasePage } from "./base.page.js";
 
-export class accountPage extends basePage {
+export class AccountPage extends BasePage {
 
     constructor(page) {
         super(page, "/account")

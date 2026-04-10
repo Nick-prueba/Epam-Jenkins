@@ -1,20 +1,24 @@
-export class headerComponent {
+export class HeaderComponent {
+
+    constructor(page) {
+        this.page = page;
+    }
 
     get popUpMsg() { return this.page.locator("[role='alert'].toast-message") }
 
-    get goToMainPage() { return this.page.locator("[data-test='nav-home']") }
-    get goToCartPage() { return this.page.locator("a[data-test='nav-cart']") }
+    get goToMain() { return this.page.locator("[data-test='nav-home']") }
+    get goToCart() { return this.page.locator("a[data-test='nav-cart']") }
 
     get dropdownForAccount() { return this.page.locator("[data-test='nav-menu']") }
-    get navigateToFavorites() { return this.page.locator("[data-test='nav-my-favorites']") }
+    get goToFavorites() { return this.page.locator("[data-test='nav-my-favorites']") }
 
-    goToPage(page) {
-        this[`goTo${page}Page`].click();
+    goToHeaderSection(sectionName) {
+        this[`goTo${sectionName}`].click();
     }
 
     goToDropdownSection(menu, section) {
         this[`dropdownFor${menu}`].click();
-        this[`navigateTo${section}`].click();
+        this[`goTo${section}`].click();
     }
 
     getPopUpMsg() {
