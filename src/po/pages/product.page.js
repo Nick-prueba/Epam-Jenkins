@@ -23,7 +23,7 @@ export class ProductPage extends BasePage {
     }
 
     getPopUpMsg() {
-        return this.headerComponent.popUpMsg;
+        return this.headerComponent.getPopUpMsg();
     }
 
 }
