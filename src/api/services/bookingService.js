@@ -1,7 +1,7 @@
 import { apiClient } from "../clients/apiClient.js";
 
 export class BookingService {
-  basicAuth = "Basic YWRtaW46cGFzc3dvcmQxMjM=";
+  basicAuth = "Basic YWRtaW46cGFzc3dvcmQxMjM="; //NO poner claves en proyectos a pushear! En todo caso, archivo aparte y al .gitignore
 
   getBasicAuth() {
     return this.basicAuth;
