@@ -44,6 +44,13 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // API Tests
+    {
+      name: 'api',
+      testDir: '../tests/api',
+    },
+
+    // UI Tests
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },

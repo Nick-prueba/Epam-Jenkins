@@ -34,6 +34,17 @@ npm install
 npm run test
 ```
 
+* Should you need to run only API tests or UI tests, you may use these commands instead:
+    - UI
+    ```
+    npm run test:ui
+    ```
+
+    - API
+    ```
+    npm run test:api
+    ```
+
 ## Authors
 
 Victoria Nicole Incinga
