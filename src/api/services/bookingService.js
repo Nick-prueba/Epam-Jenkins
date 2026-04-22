@@ -8,15 +8,6 @@ export class BookingService {
         return this.basicAuth;
     }
 
-    async getAllBookingIds() {
-        try {
-            const response = await apiClient.get('/booking');
-            return response.data;
-        } catch (error) {
-            throw new Error(error);
-        }
-    }
-
     async getBookingById(id) {
         try {
             const response = await apiClient.get(`/booking/${id}`);
