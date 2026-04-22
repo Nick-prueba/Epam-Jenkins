@@ -1,11 +1,11 @@
 {
-    "validUser" : {
-        "username" : "JohnDoe@live.com",
-        "password" : "Guau1234@"
-    },
+  "validUser": {
+    "username": "JohnDoe@live.com",
+    "password": "Guau1234@"
+  },
 
-    "invalidUser" : {
-        "username" : "invalidEmail@gmail.com",
-        "password" : "InvalidPass12@"
-    }
+  "invalidUser": {
+    "username": "invalidEmail@gmail.com",
+    "password": "InvalidPass12@"
+  }
 }

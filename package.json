@@ -5,16 +5,21 @@
   "scripts": {
     "test:api": "playwright test --config=./src/configs/playwright.config.js --project=api",
     "test:ui": "playwright test --config=./src/configs/playwright.config.js --project=chromium --project=firefox --project=webkit",
-    "test": "playwright test --config=./src/configs/playwright.config.js"
+    "test": "playwright test --config=./src/configs/playwright.config.js",
+    "prettier": "npx prettier . --write"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.3",
-    "axios": "^1.15.2"
+    "axios": "^1.15.2",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "prettier": "3.8.3"
   },
   "type": "module"
 }
