@@ -9,11 +9,11 @@ export default defineConfig([
     extends: ["js/recommended"],
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
     rules: {
-      "no-unused-vars": "warn",
+      "no-inline-comments": "warn",
       "arrow-body-style": "warn",
       "no-debugger": "off",
-      "no-unused-private-class-members": "warn",
-      "valid-typeof": "warn",
+      "no-console": "warn",
+      "no-lonely-if": "warn",
     },
   },
 ]);
