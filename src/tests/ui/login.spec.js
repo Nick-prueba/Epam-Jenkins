@@ -1,5 +1,5 @@
-import { test, expect } from '../po/index.js'
-import userData from '../testData/userData.json' with { type : 'json' }
+import { test, expect } from '../../ui/po/index.js'
+import userData from '../../ui/testData/userData.json' with { type : 'json' }
 
 test.beforeEach( async ({ loginPage }) => {
     await loginPage.open();
