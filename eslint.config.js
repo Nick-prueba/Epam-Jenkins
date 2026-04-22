@@ -3,17 +3,17 @@ import globals from "globals";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { 
-    files: ["**/*.{js,mjs,cjs}"], 
-    plugins: { js }, 
-    extends: ["js/recommended"], 
-    languageOptions: { globals: {...globals.browser, ...globals.node} },
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
     rules: {
       "no-unused-vars": "warn",
-      "no-compare-neg-zero": "warn",
+      "arrow-body-style": "warn",
       "no-debugger": "off",
       "no-unused-private-class-members": "warn",
-      "valid-typeof": "warn"
-    }
+      "valid-typeof": "warn",
+    },
   },
 ]);
