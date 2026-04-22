@@ -13,7 +13,6 @@ export class BookingService {
             const response = await apiClient.get('/booking');
             return response.data;
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
@@ -23,7 +22,6 @@ export class BookingService {
             const response = await apiClient.get(`/booking/${id}`);
             return response.data;
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
@@ -33,11 +31,10 @@ export class BookingService {
             const response = await apiClient.post('/booking', payload);
             return response.data;
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
-    
+
     async updateBooking(id, payload, auth) {
         try {
             return await apiClient.put(`/booking/${id}`, payload, {
@@ -46,7 +43,6 @@ export class BookingService {
                 },
             });
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
@@ -59,7 +55,6 @@ export class BookingService {
                 },
             });
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
@@ -72,9 +67,8 @@ export class BookingService {
                 },
             });
         } catch (error) {
-            console.log(error.response.data);
             throw new Error(error);
         }
     }
-        
+
 }

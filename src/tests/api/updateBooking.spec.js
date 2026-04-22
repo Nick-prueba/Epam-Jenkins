@@ -43,4 +43,12 @@ test.describe("Positive PUT and PATCH tests", () => {
         expect(bookingInfo.firstname).toBe("Ana");
     });
 
+    test.describe("Negative PUT tests", () => {
+        test("Should not allow update with incomplete payload", async () => {
+            await expect(
+                bookingService.updateBooking(myBooking.bookingid, { firstname: "Ana" }, bookingService.getBasicAuth())
+            ).rejects.toThrow();
+        });
+    });
+
 });
