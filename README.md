@@ -19,6 +19,7 @@ git checkout <branch name>
     - WDIO module: wdio-practice-task
     - Playwright module: playwright-practice-task
     - Cypress module: cypress-practice-task
+    - BDD module: wdio-bdd
 
 * You may follow the next instructions once you have successfully switched branches.
 
