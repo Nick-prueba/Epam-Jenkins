@@ -27,20 +27,9 @@ pipeline {
             }
         }
 
-        // stage('Install Playwright Browsers') {
-        //     steps {
-        //         bat 'npx playwright install'
-        //     }
-        // }
-
         stage('API Tests') {
             steps {
-                //bat 'npm run test:api'
-                bat '''
-                    set FORCE_COLOR=0
-                    set CI=true
-                    npm run test:api
-                '''
+                bat 'npm run test:api'
             }
         }
 
