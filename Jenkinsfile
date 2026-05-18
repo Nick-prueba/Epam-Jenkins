@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        PROJECT_DIR = 'src/config'
-    }
-
     stages {
 
         stage('Get repo') {
@@ -28,7 +24,18 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'node --version'
+                bat 'npm install 2>&1'
+            }
+        }
+
+        stage('Diagnostico') {
+            steps {
+                bat 'where node'
+                bat 'where npm'
+                bat 'where npx'
+                bat 'node --version'
+                bat 'npm --version'
             }
         }
 
