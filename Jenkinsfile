@@ -12,6 +12,19 @@ pipeline {
                 checkout scm
             }
         }
+        
+        stage('Create credentials file') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'API_USER', variable: 'API_USER'),
+                    string(credentialsId: 'API_PASS', variable: 'API_PASS')
+                ]) {
+                    bat """
+                        echo export const credentials = { user: "%API_USER%", password: "%API_PASS%" }; > src\\api\\services\\credentials.js
+                    """
+                }
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
