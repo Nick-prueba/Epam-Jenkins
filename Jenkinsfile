@@ -18,6 +18,7 @@ pipeline {
                         echo export const credentials = { user: "%API_USER%", password: "%API_PASS%" }; > src\\api\\services\\credentials.js
                     """
                 }
+                bat 'type src\\api\\services\\credentials.js'
             }
         }
 
@@ -28,21 +29,11 @@ pipeline {
             }
         }
 
-        stage('Diagnostico') {
-            steps {
-                bat 'where node'
-                bat 'where npm'
-                bat 'where npx'
-                bat 'node --version'
-                bat 'npm --version'
-            }
-        }
-
-        stage('Install Playwright Browsers') {
-            steps {
-                bat 'npx playwright install'
-            }
-        }
+        // stage('Install Playwright Browsers') {
+        //     steps {
+        //         bat 'npx playwright install'
+        //     }
+        // }
 
         stage('API Tests') {
             steps {
@@ -50,7 +41,7 @@ pipeline {
                 bat '''
                     set FORCE_COLOR=0
                     set CI=true
-                    npx playwright test --config=./src/configs/playwright.config.js --project=api --reporter=list
+                    npm run test:api
                 '''
             }
         }
