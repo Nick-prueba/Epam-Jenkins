@@ -1,4 +1,4 @@
-import { bookingService } from "../../src/api/services/index.js";
+import { bookingService, credentials } from "../../src/api/services/index.js";
 import { createBookingRequest } from "../../src/api/models/createBookingRequest.js";
 import { test, expect } from "@playwright/test";
 
@@ -14,7 +14,7 @@ test.describe("Positive PUT and PATCH tests", () => {
   test.afterEach(async () => {
     await bookingService.deleteBooking(
       myBooking.bookingid,
-      bookingService.basicAuth,
+      credentials
     );
     myBooking = null;
     bookingInfo = null;
@@ -36,7 +36,7 @@ test.describe("Positive PUT and PATCH tests", () => {
         },
         additionalneeds: "None",
       },
-      bookingService.getBasicAuth(),
+      credentials
     );
 
     bookingInfo = await bookingService.getBookingById(myBooking.bookingid);
@@ -47,7 +47,7 @@ test.describe("Positive PUT and PATCH tests", () => {
     await bookingService.bookingPartialUpdate(
       myBooking.bookingid,
       { firstname: "Ana" },
-      bookingService.getBasicAuth(),
+      credentials
     );
     bookingInfo = await bookingService.getBookingById(myBooking.bookingid);
     expect(bookingInfo.firstname).toBe("Ana");
@@ -59,7 +59,7 @@ test.describe("Positive PUT and PATCH tests", () => {
         bookingService.updateBooking(
           myBooking.bookingid,
           { firstname: "Ana" },
-          bookingService.getBasicAuth(),
+          credentials
         ),
       ).rejects.toThrow();
     });

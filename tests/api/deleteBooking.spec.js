@@ -1,4 +1,4 @@
-import { bookingService } from "../../src/api/services/index.js";
+import { bookingService, credentials } from "../../src/api/services/index.js";
 import { createBookingRequest } from "../../src/api/models/createBookingRequest.js";
 import { test, expect } from "@playwright/test";
 
@@ -16,7 +16,7 @@ test.describe("Positive DELETE tests", () => {
   test("Should delete booking", async () => {
     await bookingService.deleteBooking(
       myBooking.bookingid,
-      bookingService.getBasicAuth(),
+      credentials
     );
     await expect(
       bookingService.getBookingById(myBooking.bookingid),

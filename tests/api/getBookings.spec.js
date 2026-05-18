@@ -1,4 +1,4 @@
-import { bookingService } from "../../src/api/services/index.js";
+import { bookingService, credentials } from "../../src/api/services/index.js";
 import { createBookingRequest } from "../../src/api/models/createBookingRequest.js";
 import { test, expect } from "@playwright/test";
 
@@ -12,7 +12,7 @@ test.describe("Positive POST and GET tests", () => {
   test.afterEach(async () => {
     await bookingService.deleteBooking(
       myBooking.bookingid,
-      bookingService.getBasicAuth(),
+      credentials
     );
     myBooking = null;
   });
