@@ -5,7 +5,7 @@ pipeline {
 
         stage('Get repo') {
             steps {
-                git 'https://github.com/Nick-prueba/Epam-Jenkins.git'
+                git branch: 'main', url: 'https://github.com/Nick-prueba/Epam-Jenkins.git'
             }
         }
 
