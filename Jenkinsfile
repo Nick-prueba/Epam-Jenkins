@@ -15,7 +15,7 @@ pipeline {
                     string(credentialsId: 'API_CREDENTIALS', variable: 'API_CREDENTIALS')
                 ]) {
                     bat """
-                        echo export const credentials = { user: "%API_USER%", password: "%API_PASS%" }; > src\\api\\services\\credentials.js
+                        bat "echo export const credentials = '%API_CREDENTIALS%'; > src\\api\\services\\credentials.js"
                     """
                 }
                 bat 'type src\\api\\services\\credentials.js'
