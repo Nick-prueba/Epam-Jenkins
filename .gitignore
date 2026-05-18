@@ -5,3 +5,4 @@ node_modules
 /playwright/.cache/
 /playwright/.auth/
 /src/reports
+/src/api/services/credentials.js
