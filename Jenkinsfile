@@ -41,7 +41,11 @@ pipeline {
         stage('API Tests') {
             steps {
                 //bat 'npm run test:api'
-                bat 'npx playwright test --config=./src/configs/playwright.config.js --project=api --reporter=list'
+                bat '''
+                    set FORCE_COLOR=0
+                    set CI=true
+                    npx playwright test --config=./src/configs/playwright.config.js --project=api --reporter=list
+                '''
             }
         }
 
