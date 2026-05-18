@@ -3,9 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Get repo') {
             steps {
-                git 'https://github.com/user/repo.git'
+                git 'https://github.com/Nick-prueba/Epam-Jenkins'
             }
         }
 
