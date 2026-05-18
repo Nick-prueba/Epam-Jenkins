@@ -1,4 +1,4 @@
-import { test, expect } from "../../ui/po/index.js";
+import { test, expect } from "../../src/ui/po/index.js";
 
 test.beforeEach(async ({ mainPage }) => {
   await mainPage.open();

@@ -13,7 +13,7 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "../tests/ui",
+  testDir: "../../tests/ui",
   outputDir: "../reports/test-results",
   testIgnore: [],
   /* Run tests in files in parallel */
@@ -47,7 +47,7 @@ export default defineConfig({
     // API Tests
     {
       name: "api",
-      testDir: "../tests/api",
+      testDir: "../../tests/api",
       outputDir: '../reports/api/test-results'
     },
 

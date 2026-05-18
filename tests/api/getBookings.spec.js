@@ -1,5 +1,5 @@
-import { bookingService } from "../../api/services";
-import { createBookingRequest } from "../../api/models/createBookingRequest";
+import { bookingService } from "../../src/api/services/index.js";
+import { createBookingRequest } from "../../src/api/models/createBookingRequest.js";
 import { test, expect } from "@playwright/test";
 
 test.describe("Positive POST and GET tests", () => {
