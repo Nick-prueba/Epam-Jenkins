@@ -12,7 +12,7 @@ pipeline {
                 checkout scm
             }
         }
-        
+
         stage('Create credentials file') {
             steps {
                 withCredentials([
@@ -32,10 +32,16 @@ pipeline {
             }
         }
 
+        stage('Install Playwright Browsers') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
         stage('API Tests') {
             steps {
-
-                bat 'npm run test:api'
+                //bat 'npm run test:api'
+                bat 'npx playwright test --config=./src/configs/playwright.config.js --project=api --reporter=list'
             }
         }
 
