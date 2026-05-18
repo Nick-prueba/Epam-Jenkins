@@ -11,6 +11,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                bat 'dir'
                 bat 'npm install'
             }
         }
