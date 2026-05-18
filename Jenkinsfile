@@ -1,23 +1,27 @@
 pipeline {
     agent any
 
+    environment {
+        PROJECT_DIR = 'src/config'
+    }
+
     stages {
 
         stage('Get repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/Nick-prueba/Epam-Jenkins.git'
+                checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'dir'
                 bat 'npm install'
             }
         }
 
         stage('API Tests') {
             steps {
+
                 bat 'npm run test:api'
             }
         }
